@@ -11,7 +11,7 @@ describe('Thermostat', function() {
   });
 
   it('has power saving mode on by default', function(){
-    expect(thermostat.powersaving()).toEqual(true);
+    expect(thermostat.powersaving()).toEqual('ON');
   })
 
   it('can increase the temperature', function() {
@@ -40,7 +40,7 @@ describe('Thermostat', function() {
 
   it('can be taken off power saving mode', function () {
     thermostat.setPoweringSaving(false);
-    expect(thermostat.powersaving()).toEqual(false);
+    expect(thermostat.powersaving()).toEqual('OFF');
   });
 
   it('can increase up to 32 if power saving mode is off', function() {

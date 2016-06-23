@@ -14,11 +14,15 @@ Thermostat.prototype = {
   },
 
   powersaving: function() {
-    return this._powersaving;
+    if(this._powersaving) {
+      return 'ON';
+    } else {
+      return 'OFF';
+    };
   },
 
   increment: function() {
-    if (this.powersaving()) {
+    if (this.powersaving()==='ON') {
       var maxTemp = this._maxTempPowerSavingOn;
     } else {
       var maxTemp = this._maxTempPowerSavingOff;
