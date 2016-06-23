@@ -2,10 +2,15 @@
 <html>
   <head>
     <title>Thermostat</title>
-    <link rel='stylesheet' type='text/css' href='thermostatstyle.css' media="screen" /> 
+    <link rel='stylesheet' type='text/css' href='thermostatstyle.css' media="screen" />
   </head>
   <body>
     <section>
+      <h1>Current temperature: <span id="current-temperature">20<span></h1><br>
+      <form id="select-city">
+        <input id="current-city" type="text" placeholder="Enter a city">
+        <input type="submit"></input>
+      <form>
       <h1 id="temperature"></h1>
       <p>
         <button id="temperature-up">+</button>
@@ -19,6 +24,8 @@
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="src/Thermostat.js"></script>
     <script src="src/interface.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+
 
   </body>
 </html>

@@ -2,6 +2,14 @@ $(document).ready(function(){
   var thermostat = new Thermostat();
   updateTemperature();
 
+  $('#select-city').submit(function (event) {
+    event.preventDefault();
+    var city = $('#current-city').val()
+    $.get('http://api.wunderground.com/api/75a5e624126506a9/geolookup/conditions/q/IA/' + city + '.json', function(data) {
+    $('#current-temperature').text(data.current_observation.temp_c)
+    });
+  });
+
   $('#temperature-up').click(function(){
     thermostat.increment();
     updateTemperature();
